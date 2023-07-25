@@ -1,0 +1,43 @@
+org: smtoyedeji
+app: aws-node-http-api-project
+service: aws-node-http-api-project
+frameworkVersion: '3'
+
+configValidationMode: error
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  createItem:
+    handler: index.create
+    events:
+      - httpApi:
+          path: /items
+          method: post
+  
+
+  readItems:
+    handler: index.read
+    events:
+      - httpApi:
+          path: /items
+          method: get
+
+  updateItem:
+    handler: index.update
+    events:
+      - httpApi:
+          path: /items/{id}
+          method: put
+
+  deleteItem:
+    handler: index.delete
+    events:
+      - httpApi:
+          path: /items/{id}
+          method: delete
+   
+
+
