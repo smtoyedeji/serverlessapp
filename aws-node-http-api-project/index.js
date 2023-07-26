@@ -1,4 +1,13 @@
-let data = []
+let data = [
+  {
+    "id": 1,
+    "name": "spoon"
+  },
+  {
+    "id": 2,
+    "name": "knife"
+  },
+]
 
 // create operation
 module.exports.create = async (event) => {
@@ -8,7 +17,7 @@ module.exports.create = async (event) => {
   return {
     statusCode: 201,
     success: true,
-    body: JSON.stringify(newItem)
+    body: JSON.stringify(data)
   }
 }
 
